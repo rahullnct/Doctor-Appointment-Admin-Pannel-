@@ -1,0 +1,149 @@
+.add_doc_container{
+    width: 100%;
+    min-height: 100vh;
+    background: #f5f9ff;
+    padding: 15px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Poppins",sans-serif;
+}
+.add_doc_heading{
+    font-size: 2rem;
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.doc_img_container{
+    background: #ffffff;
+    border: 2px dashed #007bff;
+    border-radius: 16px;
+    /* margin-bottom: 2rem; */
+    width: 160px;
+    height: 160px;
+    position: relative;
+    /* margin: 0 auto 25px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.doc_img_container:hover{
+    border-color: #00bcd4;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,123,255,0.2);
+}
+.add_doc_img{
+    width: 100px;
+    opacity: 1;
+    transition: 0.3s ease;
+}
+.upload_doc_heading{
+    font-size: 0.9rem;
+    color:#007bff;
+    text-align: center;
+    margin-top: 8px;
+}
+.add_doc_form{
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.all_form_data_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.all_form_data_container{
+    display: flex;
+    justify-content:space-between;
+    gap: 40px;
+}
+.form_left_side,
+.form_right_side{
+   flex:1;
+   display: flex;
+   flex-direction: column;
+   gap: 6px;
+}
+.all_label{
+    color: #007bff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.add_doc_input,
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+    padding: 10px 14px;
+    border: 1.5px solid #dce4f0;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s ease;
+    font-size: 0.95rem;
+    background: #fafcff;
+}
+.add_doc_input:focus,
+input:focus,
+textarea:focus{
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+.doc_password{
+    position: relative;
+    top: -33px;
+    left: 90%;
+    float: right;
+    cursor: pointer;
+    color: #1976d2;
+    font-size: 18px;
+}
+.doctor_address input{
+    width: 100%;
+    margin-top: 6px;
+}
+.textarea_inp{
+    width: 100%;
+    min-height: 100px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border:  1.5px solid #dce4f0;
+    font-size: 0.95rem;
+    outline:  none;
+    resize: none;
+    transition: 0.3s ease;
+    background: #fafcff;
+}
+.textarea_inp:focus{
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+.add_doc_btn{
+    align-items: center;
+    background: linear-gradient(135deg, #007bff,#00bcd4);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.add_doc_btn:hover{
+    background: linear-gradient(135deg, #0069d9, #00acc1);
+    box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+}
+
+
+
+

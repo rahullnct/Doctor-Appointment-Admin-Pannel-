@@ -1,0 +1,185 @@
+.login_wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e6f4ff, #f9fcff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px; /* more padding for balance */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login_container {
+  background: #ffffff;
+  border-radius: 16px; /* more rounded for modern feel */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 1100px; /* bigger */
+  width: 100%;
+  display: flex;
+  padding: 50px; /* bigger padding */
+  gap: 60px; /* more spacing between left + right */
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* Left Section */
+.login_left {
+  flex: 1;
+  background: linear-gradient(135deg, #0077b6, #0096c7); /* hospital blue gradient */
+  border-radius: 12px;
+  color: #ffffff;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login_heading {
+  font-size: 2.8rem; /* bigger heading */
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.2rem;
+}
+
+.login_subheading {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f9ff;
+}
+
+/* Right (Form) */
+.login_form {
+  flex: 1.2; /* make form slightly bigger than left */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.for_username,
+.for_password {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0a2540;
+  margin-bottom: 6px;
+}
+
+.inp_username,
+.inp_password {
+  width: 100%;
+  padding: 14px 16px; /* slightly bigger inputs */
+  border: 1px solid #ccd6e0;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.inp_username:focus,
+.inp_password:focus {
+  border-color: #0077b6;
+}
+
+/* Password Eye Icon */
+.show_icon {
+  margin-left: -35px;
+  margin-top: -53px;
+  margin-right: 10px;
+  cursor: pointer;
+  align-self: flex-end;
+  color: #0077b6;
+  font-size: 1.2rem;
+}
+
+/* Forgot Password */
+.forgot_password {
+  font-size: 14px;
+  color: #0077b6;
+  text-decoration: none;
+  align-self: flex-end;
+  transition: color 0.3s;
+}
+
+.forgot_password:hover {
+  color: #005f8c;
+  text-decoration: underline;
+}
+
+/* Button */
+.login_btn {
+  background: #0077b6;
+  color: #fff;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.login_btn:hover {
+  background: #005f8c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.2);
+}
+
+/* New User */
+.new_user {
+  font-size: 15px;
+  color: #444;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.signup_link {
+  color: #0077b6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup_link:hover {
+  color: #005f8c;
+  text-decoration: underline;
+}
+
+/* ------------------- */
+/* RESPONSIVE STYLES */
+/* ------------------- */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .login_container {
+    padding: 35px;
+    gap: 40px;
+  }
+
+  .login_heading {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .login_container {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .login_left {
+    border-radius: 12px 12px 0 0; /* top rounded when stacked */
+    margin-bottom: 20px;
+  }
+
+  .login_form {
+    width: 100%;
+  }
+
+  .login_btn {
+    width: 100%;
+  }
+
+  .show_icon {
+    margin-left: -30px;
+    margin-top: -35px;
+  }
+}
