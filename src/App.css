@@ -7,17 +7,18 @@
 body{
   background: #f5f9ff;
   color: #333;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .main_appp{
     display:flex;
     flex-direction: column;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 .the_dashboards{
   display: flex;
   width: 100%;
-  min-height: calc(100cvh -70px);
+  min-height: calc(100vh -70px);
   background: #eef3fb;
   transition: all 0.3s ease;
+  overflow-y: auto;
 }

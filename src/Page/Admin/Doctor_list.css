@@ -1,0 +1,84 @@
+.doctor_list_wrapper{
+    width: 100%;
+    padding: 40px 60px;
+    background: #f5f8ff;
+    min-height: 100vh;
+    font-family: "Poppins",sans-serif;
+    
+   
+}
+.doctor_list_heading{
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0d47a1;
+    margin-bottom: 40px;
+    position: relative;
+}
+.doctor_list_heading::after{
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #1976d2;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+.all_doctors_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap:25px;
+    justify-content: center;
+}
+.doctor_information{
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align:  center;
+    padding: 20px 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #e0e6f0;
+}
+.doctor_information:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(25,118,210,0.2);
+}
+.all_doctor_image{
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    /* border: 2px solid #1976d2; */
+    transition: all 0.3s ease;
+}
+.doctor_information:hover .all_doctor_image{
+    border-color: #0d47a1;
+}
+.doc_name{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a237e;
+    margin-bottom: 5px;
+}
+.speciality{
+    font-size: 0.95rem;
+    color: #455a64;
+    margin-bottom: 10px;
+}
+.doc_available{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    gap: 8px;
+}
+.doc_available input[type="checkbox"]{
+    accent-color: #1976d2;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.available{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: pointer;
+}
