@@ -8,6 +8,7 @@ const AdminProvider = (props) => {
   const backend_url = import.meta.env.VITE_BACKEND_URL;
   const[alldoctor_data,setalldoctorData]=useState([]);
   const[appointments,setappointments]=useState([]);
+  const currency='$';
 
 
   const alldoctors=async()=>{
@@ -59,6 +60,18 @@ const AdminProvider = (props) => {
       }
     }
 
+const admin_appointment_cancel=async(appointment_id)=>{
+  try{
+     const {data}=await axios.post(backend_url+'/api/v1/admin/appointment_cancel',{appointment_id},{headers:{
+      atoken:Atoken
+  }})
+     console.log("appointment cancel:",data);
+  }catch(err){
+      console.log(err);
+
+  }
+}
+
   const value = {
     Atoken,
     setAtoken,
@@ -69,7 +82,9 @@ const AdminProvider = (props) => {
     check_availablity,
     getappointments,
     appointments,
-    setappointments
+    setappointments,
+    currency,
+    admin_appointment_cancel,
   };
 
   return (
