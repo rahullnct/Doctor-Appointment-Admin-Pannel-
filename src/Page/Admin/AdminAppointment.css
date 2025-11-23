@@ -1,0 +1,79 @@
+.admin_appointment_container{
+    width: 100%;
+    padding: 30px;
+    background: #f5f9ff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.appointment_table{
+    width:  100%;
+    max-width: 1300px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6pc 20px rgba(0,0,0,0.08);
+}
+.all_table_head{
+    background: #0a66c2;
+    color: white;
+}
+.all_table_head th{
+    padding: 16px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+.all_table_bodies tr{
+    border-bottom: 1px solid #e5e9f2;
+    transition: background 0.2s;
+}
+.all_table_bodies tr:hover{
+    background: #f0f7ff;
+}
+.all_table_bodies td{
+    padding: 14px 12px;
+    font-size: 15px;
+    color: #333;
+    vertical-align: middle;
+}
+.all_table_bodies td img{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+/* .all_table_bodies td:nth-child(5){
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+} */
+.all_table_bodies td svg{
+    font-size: 24px;
+    color: #d9534f;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.all_table_bodies td svg:hover{
+    color: #b52b27;
+    transform: scale(1.12);
+}
+.all_table_bodies td p{
+    color: red;
+    font-weight: 600;
+}
+.all_table_bodies tr td{
+    text-align: center;
+}
+@media(max-width:1824px){
+    .appointment_table{
+        font-size: 14px;
+    }
+    .all_table_head th{
+        font-size: 15px;
+    }
+}
