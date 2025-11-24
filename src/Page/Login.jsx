@@ -8,9 +8,11 @@ import { AdminContext } from "../Context_Controller/AdminContext";
 // import { toast } from "react-hot-toast";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { DoctorContext } from "../Context_Controller/DoctorContext";
 function Login()
 {
     const {backend_url,setAtoken}=useContext(AdminContext);
+    // const{setdtoken}=useContext(DoctorContext);
     console.log("backend_url",backend_url);
 
     const [loginsetup, setloginsetup] = useState({ email: "", password: "" }) 
@@ -35,6 +37,9 @@ function Login()
             localStorage.setItem('aToken',data.admin_token)
             setAtoken(data.admin_token);
             }
+        }else{
+           const{data}=await axios.post(backend_url+'/api/v1/doctor/login',{email,password})
+           console.log("doctor data",data);
         }
     }
        catch(error){

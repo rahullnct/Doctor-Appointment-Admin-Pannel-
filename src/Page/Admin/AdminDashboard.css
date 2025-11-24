@@ -1,0 +1,131 @@
+.admin_dashboard_container{
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    background: #f6faff;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.dashboard_details{
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.dashboard_details > div{
+    flex: 1;
+    min-width: 250px;
+    background: #ffffff;
+    padding: 22px 28px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.dashboard_details > div:hover{
+    transform: translateY(-4px);
+    box-shadow: 0px 10px 28px rgba(0,0,0,0.1);
+}
+.dashboard_details img{
+    width: 55px;
+    height: 55px;
+}
+.admin_doctor_details h4{
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    color: #0a66c2;
+}
+.admin_doctor_details p{
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+}
+.latest_appointment_details{
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 14px;
+    box-shadow: 0px 8px 22px rgba(0,0,0,0.07);   
+}
+.heading_booking{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.heading_booking img{
+    width: 32px;
+}
+.latest_booking_heading{
+    font-size: 20px;
+    color: #0a66c2;
+    font-weight: 700;
+}
+.dashboard_doc_details{
+    display: flex;
+    align-items:  center;
+    justify-content: space-between;
+    background: #f8fbff;
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    border-left: 4px solid #4169e1;
+    transition: background 0.3s ease;
+}
+.dashboard_doc_details:hover{
+    background: #eef1ff;
+}
+.doc_details{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.dashboard_doc_details img{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.doc_name_date{
+    display: flex;
+    flex-direction: column;
+}
+.doc_name{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+.dashboard_doc_details p{
+    margin: 0;
+    color: #6b6bff;
+}
+.dashboard_doc_details svg{
+    font-size: 30px;
+    color: #ff4a4a;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.dashboard_doc_details svg:hover{
+    color: #d90000;
+    transform: scale(1.1);
+}
+.dashboard_doc_details > p{
+    color: #b40000;
+    font-weight: 600;
+}
+@media (max-width:768px){
+    .dashboard_details{
+        flex-direction: column;
+    }
+    .dashboard_doc_details{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .dashboard_doc_details svg{
+        align-self: flex-end;
+    }   
+}
