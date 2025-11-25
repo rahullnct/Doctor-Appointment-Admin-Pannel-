@@ -6,7 +6,7 @@ import { MdCancel } from "react-icons/md";
 import "./AdminAppointment.css";
 function AdminAppointment() {
     const { Atoken, getappointments, appointments, currency,admin_appointment_cancel } = useContext(AdminContext);
-    // console.log(appointments);
+    console.log("appointment data",appointments);
     const { calculate_age, ChangeDates } = useContext(AppContext);
 
     useEffect(() => {
