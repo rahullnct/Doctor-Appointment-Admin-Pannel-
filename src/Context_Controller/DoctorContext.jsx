@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useCallback, useContext, useState } from "react";
+import axios from "axios";
 
 
 export const DoctorContext=createContext();
@@ -6,13 +7,28 @@ export const DoctorContext=createContext();
 const  Doctorprovider=(props)=>{
 
    const backend_url=import.meta.env.VITE_BACKEND_URL;
-
    const[dtoken,setdtoken]=useState(localStorage.getItem('dtoken') ? localStorage.getItem('dtoken'):'');
-   console.log("doctor token",dtoken);
+   
+   const[appointment,setappointments]=useState([]);
+   
+   const getappointment=async()=>{
+      try{
+          const{data}=await axios.get(backend_url+'/api/v1/doctor/appointment',{headers:{dtoken:dtoken}})
+          console.log("doctor pannel appointment",data);
+         if(data.success){
+            setappointments(data.appointment);            
+         }
+      }catch(error){
+         console.log(error);
+      }
+   }
    const value={
       dtoken,
       setdtoken,
       backend_url,
+      appointment,
+      setappointments,
+      getappointment
    }
  
    return <DoctorContext.Provider value={value}>

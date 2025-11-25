@@ -33,7 +33,6 @@ const AdminProvider = (props) => {
        const {data}= await axios.post(backend_url+'/api/v1/availability',{docId},{headers:{
         atoken: Atoken
        }})
-      //  console.log("availabity data:",data.data.available);
        if(data.success){
         console.log("availablity is checked");
         alldoctors();
