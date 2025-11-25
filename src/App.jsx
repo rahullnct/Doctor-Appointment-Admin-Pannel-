@@ -13,10 +13,12 @@ import AdminDashboard from './Page/Admin/AdminDashboard';
 import DoctorList from './Page/Admin/DoctorList';
 import AdminAddDoctor from './Page/Admin/AdminAddDoctor';
 import AdminAppointment from './Page/Admin/AdminAppointment';
+import { DoctorContext } from './Context_Controller/DoctorContext';
 function App() {
   
   const {Atoken}=useContext(AdminContext);
-  return Atoken ? (
+  const{dtoken}=useContext(DoctorContext);
+  return Atoken || dtoken ? (
     <div className='main_appp'>
         <ToastContainer/>
         <Navbar />

@@ -7,7 +7,8 @@ const  Doctorprovider=(props)=>{
 
    const backend_url=import.meta.env.VITE_BACKEND_URL;
 
-   const[dtoken,setdtoken]=useState('');
+   const[dtoken,setdtoken]=useState(localStorage.getItem('dtoken') ? localStorage.getItem('dtoken'):'');
+   console.log("doctor token",dtoken);
    const value={
       dtoken,
       setdtoken,

@@ -12,7 +12,7 @@ import { DoctorContext } from "../Context_Controller/DoctorContext";
 function Login() {
   const { backend_url, setAtoken } = useContext(AdminContext);
   const{setdtoken}=useContext(DoctorContext);
-  console.log("backend_url", backend_url);
+  // console.log("backend_url", backend_url);
 
   const [loginsetup, setloginsetup] = useState({ email: "", password: "" })
   const [showpassword, setshowpassword] = useState(false);
@@ -32,7 +32,7 @@ function Login() {
         const { data } = await axios.post(backend_url + '/api/v1/admin/login', { email, password })
         // console.log("data",data);
         if (data.success) {
-          console.log(data.admin_token);
+          // console.log(data.admin_token);
           toast.success("welcome to admin page")
           localStorage.setItem('aToken', data.admin_token)
           setAtoken(data.admin_token);
@@ -41,6 +41,7 @@ function Login() {
         const { data } = await axios.post(backend_url + '/api/v1/doctor/login', { email, password })
         // console.log("doctor signed successfully", data);
         if(data.success){
+          localStorage.setItem('dtoken',data.token);
           setdtoken(data.token);
           toast.success(data.message);
         }
