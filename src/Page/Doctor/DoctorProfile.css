@@ -1,0 +1,146 @@
+.doctor_profile_container{
+    width: 100%;
+    max-width:1000px;
+    margin: 40px auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 18px;
+    display: flex;
+    gap: 35px;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    box-shadow: 0px 6px 25px rgba(0,0,0,0.12);
+}
+.doctor_profile_container img{
+    width: 230px;
+    height: 230px;
+    border-radius: 16px;
+    object-fit: cover;
+    border: 4px solid #f1f5ff;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+.doc_Details{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.docName{
+    font-size: 32px;
+    font-weight: 700;
+    color: #1c2a45;
+}
+.doc_academic{
+    display:flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.doc_academic p{
+    /* background: #eef3ff; */
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #3a4d73;
+}
+.about_heading{
+    font-size: 22px;
+    color: #223353;
+    margin-top: 12px;
+    font-weight: 600;
+}
+.doc_about{
+    color: #5a5a5a;
+    line-height: 1.6;
+    font-size: 16px;
+}
+.doctor_appointment,
+.docAddress,
+.doc_Details p{
+   font-size: 17px;
+   font-weight: 600;
+   color: #2a2a2a;
+}
+.doctor_appointment input,
+.address_value,
+.doc_Details input {
+    padding: 10px 12px;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    font-size:15px;
+    margin-left: 10px;
+    outline: none;
+    width: 220px;
+}
+.docFees{
+    margin-left: 10px;
+    color: #3a4a72;
+    font-weight: 700;
+}
+.main_address{
+    margin-left: 10px;
+}
+.address1,.address2{
+    display: block;
+    color: #444;
+}
+.available_or_not{
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.available_or_not input{
+    width: 20px;
+    height: 20px;
+}
+.doc_available{
+    font-size: 16px;
+    color: #333;
+}
+.edit_btn,
+.save_btn{
+    width: 140px;
+    padding: 12px 0;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.25s;
+}
+.edit_btn{
+    background: #4e73df;
+    color: white;
+}
+.edit_btn:hover{
+    background: #3e5fc7;
+}
+.save_btn{
+    background: #3ecc71;
+    color: white;
+}
+.save_btn:hover{
+    background: #27ae60;
+}
+@media(max-width:768px){
+    .doctor_profile_container{
+        padding: 20px;
+        justify-content: center;
+    }
+    .doctor_profile_container img{
+        width: 180px;
+        height: 180px;
+    }
+    .docName{
+        font-size: 26px;
+    }
+    .doctor_appointment input,
+    .address_value,
+    .doc_Details input{
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 0;
+    }
+}

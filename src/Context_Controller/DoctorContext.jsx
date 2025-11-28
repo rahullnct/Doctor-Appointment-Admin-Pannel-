@@ -9,7 +9,7 @@ const  Doctorprovider=(props)=>{
    const[dtoken,setdtoken]=useState(localStorage.getItem('dtoken') ? localStorage.getItem('dtoken'):'');
    
    const[appointment,setappointments]=useState([]);
-   const[docProfile,setdocProfile]=useState([]);
+   const[docProfile,setdocProfile]=useState(false);
 
    
 

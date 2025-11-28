@@ -3,12 +3,13 @@ import { DoctorContext } from "../../Context_Controller/DoctorContext";
 import { assets } from "../../assets/assets";
 import axios from "axios";
 import { MdCancel } from "react-icons/md";
+import { TiTick } from "react-icons/ti";
 import { AppContext } from "../../Context_Controller/AppContext";
 function DoctorDashboard() {
-    const { dtoken, backend_url } = useContext(DoctorContext);
+    const { dtoken, backend_url,appointmentCancel,appointmentComplete} = useContext(DoctorContext);
     const { ChangeDates } = useContext(AppContext);
     const [doc_dashboard, setdoc_dashboard] = useState(false);
-    console.log("dashboard_Details:", doc_dashboard);
+    // console.log("dashboard_Details:", doc_dashboard);
     const [latest_appointment, setlatest_appointment] = useState([]);
 
     const DoctorDashboard = async () => {
