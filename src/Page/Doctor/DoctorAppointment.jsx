@@ -6,18 +6,14 @@ import { MdCancel } from "react-icons/md";
 import { TiTick } from "react-icons/ti";
 import { AdminContext } from "../../Context_Controller/AdminContext";
 function DoctorAppointment(){
-    const{dtoken,getappointment,appointment,appointmentComplete}=useContext(DoctorContext);
+    const{dtoken,getappointment,appointment,appointmentComplete,appointmentCancel}=useContext(DoctorContext);
     const { calculate_age, ChangeDates } = useContext(AppContext);
     const{currency}=useContext(AdminContext);
     useEffect(()=>{
     if(dtoken){
         getappointment();
     }
-    // useEffect(()=>{
-    // if(dtoken){
-    //     appointmentComplete();
-    // }
-    // },[dtoken])
+    
 
     },[dtoken])
       return (
@@ -38,7 +34,7 @@ function DoctorAppointment(){
                         {
                             appointment.length > 0 ? (
     
-                                appointment.map((user_datas, ind) => (
+                                appointment.reverse().map((user_datas, ind) => (
                                     
                                     <tr key={user_datas._id}>
                                         <td>{ind + 1}</td>
@@ -49,12 +45,16 @@ function DoctorAppointment(){
                                         <td>{ChangeDates(user_datas?.slotDate)},{user_datas?.slotTime}</td>
                                         <td>{currency}{user_datas?.docData?.fees}</td>
                                         <td>
-                                            <TiTick style={{color:"green"}} onClick={()=>appointmentComplete(user_datas?._id)}/>
-                                            <MdCancel/>
-                                            {/* {
-                                                user_datas.cancelled ? <p>Cancelled</p> :
-                                                    (<MdCancel onClick={()=> admin_appointment_cancel(user_datas._id)}/>)
-                                            } */}
+                                            {
+                                                user_datas?.cancelled ? (<p>Cancelled</p>):
+                                                (user_datas?.IsCompleted ? (<p style={{color:"green"}}>Completed</p>):(
+                                                <td>
+                                                   <TiTick style={{color:"green"}} onClick={()=>appointmentComplete(user_datas?._id)}/>
+                                                  <MdCancel onClick={()=>appointmentCancel(user_datas?._id)}/>
+                                                </td>
+                                                ))
+                                            }
+                                         
                                         </td>
     
                                     </tr>

@@ -10,7 +10,6 @@ const AdminProvider = (props) => {
   const[appointments,setappointments]=useState([]);
   const currency='$';
 
-
   const alldoctors=async()=>{
      try{
         const {data}= await axios.post(backend_url+'/api/v1/all-doctors',{},

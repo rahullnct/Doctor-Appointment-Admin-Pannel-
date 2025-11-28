@@ -1,6 +1,5 @@
-import { createContext, useCallback, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import axios from "axios";
-
 
 export const DoctorContext=createContext();
 
@@ -10,6 +9,10 @@ const  Doctorprovider=(props)=>{
    const[dtoken,setdtoken]=useState(localStorage.getItem('dtoken') ? localStorage.getItem('dtoken'):'');
    
    const[appointment,setappointments]=useState([]);
+   
+
+   
+
    
    const getappointment=async()=>{
       try{
@@ -30,14 +33,30 @@ const  Doctorprovider=(props)=>{
           }})
           if(data.success){
             console.log(data.message);
+            getappointment();
+
           }
       }
       catch(error){
          console.log("appointment not complete",error);
       }
    }
+   const appointmentCancel=async(appointmentId)=>{
+      try{
+         const {data}=await axios.post(backend_url+'/api/v1/doctor/appointment/cancel',{appointmentId},{headers:{
+            dtoken:dtoken
+         }})
+         if(data.success){
+            console.log(data.message);
+            getappointment();
+         }
+      }
+      catch(error){
+         console.log("appointment not complete",error);
+      }
 
-
+   } 
+  
    const value={
       dtoken,
       setdtoken,
@@ -45,7 +64,8 @@ const  Doctorprovider=(props)=>{
       appointment,
       setappointments,
       getappointment,
-      appointmentComplete
+      appointmentComplete,
+      appointmentCancel,
    }
  
    return <DoctorContext.Provider value={value}>
