@@ -9,7 +9,7 @@ const  Doctorprovider=(props)=>{
    const[dtoken,setdtoken]=useState(localStorage.getItem('dtoken') ? localStorage.getItem('dtoken'):'');
    
    const[appointment,setappointments]=useState([]);
-   
+   const[docProfile,setdocProfile]=useState([]);
 
    
 
@@ -56,6 +56,19 @@ const  Doctorprovider=(props)=>{
       }
 
    } 
+   const doctorprofile=async()=>{
+      try{
+         const {data}=await axios.get(backend_url+'/api/v1/doctor/profile',{headers:{
+            dtoken:dtoken
+         }})
+         // console.log("doctor profile data:",data);
+         if(data.success){
+            setdocProfile(data?.profile)
+         }
+      }catch(error){
+        console.log("doctor profile error",error);  
+      }
+   }
   
    const value={
       dtoken,
@@ -66,6 +79,10 @@ const  Doctorprovider=(props)=>{
       getappointment,
       appointmentComplete,
       appointmentCancel,
+      doctorprofile,
+      docProfile,
+      setdocProfile,
+
    }
  
    return <DoctorContext.Provider value={value}>
